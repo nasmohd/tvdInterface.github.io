@@ -4,3 +4,7 @@
   width: 100%;
 }
 
+#download_btn:hover {
+  background-color: #3eaef4 !important;
+}
+
