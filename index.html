@@ -31,10 +31,6 @@
   <a id="embedded_tweet" href=""></a> 
 </blockquote>
 
-<div id="demo_test">
-<h2>jQuery and AJAX is FUN!</h2>
-<p id="p1">This is some text in a paragraph.</p>
-</div>
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -42,7 +38,7 @@
     function preview_tweet(){
         var url_input = document.getElementById("url_input");
         var urlInput_val = url_input.value;
-        alert (urlInput_val);
+        // alert (urlInput_val);
 
         var embedded_tweet1 = document.getElementById("embedded_tweet");
         
@@ -52,34 +48,23 @@
         // change_tweetURL.reload();
         // console.log (document.URL);
         embedded_tweet1.href = urlInput_val;
-            embedded_tweet1.style.backgroundColor = 'red';
-            embedded_tweet1.innerHTML = urlInput_val; 
+        embedded_tweet1.style.backgroundColor = 'red';
+        embedded_tweet1.innerHTML = urlInput_val;
         
         
-        $("#tweet_preview").load(location.URL + "#embedded_tweet", function() {
-            // embedded_tweet1.style.backgroundColor = 'red';
-            // alert (urlInput_val);
-            var embedded_tweet1 = document.getElementById("embedded_tweet");
-           embedded_tweet1.href = urlInput_val;
-            embedded_tweet1.style.backgroundColor = 'red';
-            embedded_tweet1.innerHTML = urlInput_val; 
-            console.log (location.URL);
+        //The code below means load the body 
+        // $("body").load("#tweet_preview", function() {
+        
+        //In place of tweet_preview, place the body
+        //$("#tweet_preview").load("", function() {
+    
             
-            // var url_input = document.getElementById("url_input");
-            url_input.value = urlInput_val;
+        $("#tweet_preview").load(location.URL + "#tweet_preview", function() {
+            var embedded_tweet = document.getElementById("embedded_tweet");
+           embedded_tweet.href = urlInput_val;
+            embedded_tweet.style.backgroundColor = 'red';
+            embedded_tweet.innerHTML = urlInput_val;
         });
-
-        
-        // console.log (embedded_tweet);
-        // $(".twitter-tweet").load(" .twitter-tweet");
-        // embedded_tweet.contentWindow.location.reload(true);
-        
-        // try {
-        //     $(".twitter-tweet").load(" .twitter-tweet");
-        // }
-        // catch (e) {
-        //     console.log("Error", e.message);
-        // }
     }
     
     
