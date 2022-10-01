@@ -5,10 +5,14 @@
 }
 
 #download_btn:hover {
-  background-color: #3eaef4 !important;
+  background-color: #148c9f !important;
 }
 
 #download_btn-1:hover {
   background-color: #0d8bd9 !important;
+}
+
+#download_btn {
+  border-color: #16a0b6 !important;
 }
 

@@ -31,31 +31,15 @@
   <a id="embedded_tweet" href=""></a> 
 </blockquote>
 
+<p id="txt"> Hey </p>
+
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("button").click(function(){
-    $("#div1").load("demo_test.txt #p1");
-  });
-});
-</script>
-</head>
-<body>
-
-<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
-
-<button>Get External Content</button>
-
-
 
 <script type='text/javascript'>
     function preview_tweet(){
         var url_input = document.getElementById("url_input");
         var urlInput_val = url_input.value;
-        // alert (urlInput_val);
+        console.log (urlInput_val);
 
         var embedded_tweet1 = document.getElementById("embedded_tweet");
         
@@ -64,25 +48,24 @@ $(document).ready(function(){
         // var change_tweetURL = document.getElementById("tweet_preview");
         // change_tweetURL.reload();
         // console.log (document.URL);
-        embedded_tweet1.href = urlInput_val;
+        
+        
+        $("#tweet_preview").load(document.URL +  " #embedded_tweet", function() {
+            // embedded_tweet1.style.backgroundColor = 'red';
+            // alert (urlInput_val);
+            var embedded_tweet1 = document.getElementById("embedded_tweet");
+           embedded_tweet1.href = urlInput_val;
             embedded_tweet1.style.backgroundColor = 'red';
             embedded_tweet1.innerHTML = urlInput_val; 
+        });
         
-        document.getElementById('embedded_tweet').contentDocument.location.reload(true);
         
-//         $("#tweet_preview").load(location.href + "#demo_test", function() {
-//             // embedded_tweet1.style.backgroundColor = 'red';
-//             // alert (urlInput_val);
-//             var embedded_tweet1 = document.getElementById("embedded_tweet");
-//            embedded_tweet1.href = urlInput_val;
-//             embedded_tweet1.style.backgroundColor = 'red';
-//             embedded_tweet1.innerHTML = urlInput_val; 
-//             console.log (location.URL);
-            
-//             // var url_input = document.getElementById("url_input");
-//             url_input.value = urlInput_val;
-//         });
-
+        
+        $("#txt").load(document.URL +  " #txt", function() {
+            var el = document.getElementById ("txt");
+            el.style.backgroundColor = 'red';
+            alert('<p> H </p> <p> H </p>');
+        });
         
         // console.log (embedded_tweet);
         // $(".twitter-tweet").load(" .twitter-tweet");
