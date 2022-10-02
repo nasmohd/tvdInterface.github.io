@@ -28,7 +28,7 @@
                     class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 col-10 ml-auto mr-auto" id="embedded_col"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <blockquote id="tweet_preview" class="twitter-tweet">
-  <a id="embedded_tweet" href=""></a> 
+  <a id="embedded_tweet" href="https://twitter.com/tiagopog/status/807811447862468608"></a> 
 </blockquote>
 
 
@@ -47,9 +47,9 @@
         // var change_tweetURL = document.getElementById("tweet_preview");
         // change_tweetURL.reload();
         // console.log (document.URL);
-        embedded_tweet1.href = urlInput_val;
-        embedded_tweet1.style.backgroundColor = 'red';
-        embedded_tweet1.innerHTML = urlInput_val;
+        // embedded_tweet1.href = urlInput_val;
+        // embedded_tweet1.style.backgroundColor = 'red';
+        // embedded_tweet1.innerHTML = urlInput_val;
         
         
         //The code below means load the body 
@@ -58,15 +58,18 @@
         //In place of tweet_preview, place the body
         //$("#tweet_preview").load("", function() {
     
+        //Sample from w3schools
+        // $("#div1").load("demo_test.txt");
+        // $("#here").load(" #here > *");
         
-        //Needs to be worked ON, F
-        $("#tweet_preview").load(window.location + " #embedded_tweet", function() {
-            var embedded_tweet = document.getElementById("embedded_tweet");
-           embedded_tweet.href = urlInput_val;
-            embedded_tweet.style.backgroundColor = 'red';
-            embedded_tweet.innerHTML = urlInput_val;
-            alert (window.location+"#tweet_preview");
-        });
+        //Needs to be worked ON, FUCK
+        // $("#tweet_preview").load(window.location + " #embedded_tweet", function() {
+        //     var embedded_tweet = document.getElementById("embedded_tweet");
+        //    embedded_tweet.href = urlInput_val;
+        //     embedded_tweet.style.backgroundColor = 'red';
+        //     embedded_tweet.innerHTML = urlInput_val;
+        //     alert (window.location+"#tweet_preview");
+        // });
     }
     
     
